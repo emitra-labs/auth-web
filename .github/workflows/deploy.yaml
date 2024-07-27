@@ -10,6 +10,8 @@ jobs:
     permissions:
       contents: read
       packages: write
+    with:
+      adapter: node
     secrets: inherit
 
   deploy:
