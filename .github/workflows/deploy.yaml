@@ -19,6 +19,4 @@ jobs:
     needs: build
     permissions:
       contents: read
-    with:
-      host: auth.emitra.co
     secrets: inherit
