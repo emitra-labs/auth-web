@@ -15,8 +15,10 @@ jobs:
     secrets: inherit
 
   deploy:
-    uses: emitra-labs/actions/.github/workflows/deploy-kubernetes.yaml@main
+    uses: emitra-labs/actions/.github/workflows/deploy-docker.yaml@main
     needs: build
     permissions:
       contents: read
+    with:
+      group: webs
     secrets: inherit
