@@ -8,8 +8,10 @@ export const load: LayoutServerLoad = async ({ cookies, url }) => {
 
 	try {
 		auth = await authenticate({ apiUrl: env.PUBLIC_API_URL, cookies, url });
-	} catch (error) {
-		redirect(302, '/sign-in');
+	} catch (err: any) {
+		if (url.pathname !== '/sign-in') {
+			redirect(302, '/sign-in');
+		}
 	}
 
 	redirect(302, env.PUBLIC_ACCOUNT_URL);
