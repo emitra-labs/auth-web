@@ -11,6 +11,8 @@ export const load: LayoutServerLoad = async ({ cookies, url }) => {
 	} catch (err: any) {
 		if (url.pathname !== '/sign-in') {
 			redirect(302, '/sign-in');
+		} else {
+			return {}
 		}
 	}
 
